@@ -1,54 +1,28 @@
 
-// // Game Pseudocode:  
-// . Generate random number for computer
-// . Get user input 
-// . Change user input to lowercase 
-// . Match computer int to string using SWITCH CASE    
-// . Play round using IF statement 
-// -----'Rock’, ‘Paper’ or ‘Scissors’-----
-
-const computerSelection = getComputerChoice();
-const playerSelection = convertPlayerInput(); 
-
+// Create a function named getComputerChoice  to randomly return Rock-Paper-Scissors
 function getComputerChoice(){
-    return  Math.floor(Math.random() * 3) + 1;
+    return Math.floor(Math.random() * 3) + 1;
 }
+console.log(getComputerChoice());
 
-function getPlayerInput(){
-    return prompt("'Rock’, ‘Paper’ or ‘Scissors’: ").toLowerCase();
+// Convert computer choice 
+switch (getComputerChoice()) {
+    case 1:
+        console.log('rock');        
+    default:
+        console.log('No computer choice');
 }
+// Create function to play single round, should take two parameters, playerSelection 
+//and computerSelection, and return the winner
 
-function convertPlayerInput(){
-    switch (getPlayerInput()) {
-        case 'rock':
-            return 1;
-        case 'paper':
-            return 2;
-        case 'scissors':
-            return 3;
-        default:
-            break;
-    }
-}
+// Create a function named playerSelection, case sensitive rock RocK ROCK, return input
 
-function playRound(playerSelection,computerSelection){
-    if(playerSelection === computerSelection) // Tie Game
-        console.log('Game is tie!');
-    else if((playerSelection === 1) && (computerSelection === 3)) //Rock vs Scissors
-        console.log("You win! Rock beats Scissors");
-    else if ((playerSelection === 2) && (computerSelection === 1)) // Paper vs Rock
-        console.log("You win! Paper beats Rock");
-    else if ((playerSelection === 3) && (computerSelection == 2)) // Scissors vs Paper
-        console.log("You win! Scissors beats Paper");
-    else if((playerSelection === 3) && (computerSelection === 1)) //Scissors vs Rock
-        console.log("You lose! Rock beats Scissors");
-    else if ((playerSelection === 1) && (computerSelection === 2)) // Rock vs Paper
-        console.log("You lose! Paper beats Rock");
-    else if ((playerSelection === 2) && (computerSelection == 3)) // Paper vs Scissors
-        console.log("You lose! Scissors beats Paper");
-}
+// Create function named game() using while/for loop up to 5 times, display the results
+//of each round and winner at the end
 
-playRound(playerSelection,computerSelection);
+
+//Create input form user using prompt() method
+
 
 
 
