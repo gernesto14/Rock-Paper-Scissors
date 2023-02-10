@@ -82,7 +82,8 @@ function game(){
     
     let computer = 0;
     let player = 0;
-
+    
+    //Play 5 rounds 
     for( i = 1; i < 6; i++){
         playRound(playerSelection(), getComputerChoice());
         
@@ -108,14 +109,25 @@ function game(){
     }
 }
 
+//Create three buttons
 
-game();
+//Add event listener to the button
+const rock = document.getElementById('rock');
+const paper = document.getElementById('paper');
+const scissors = document.getElementById('scissors');
 
+rock.addEventListener('click', rockButton);
+rock.addEventListener('click', paperButton);
+rock.addEventListener('click', scissorsButton);
 
+function rockButton(){
+    alert('ROCK!!!!!');
+}
 
+function paperButton(){
+    alert('PAPER!!!!!');
+}
 
-
-
-
-
-
+function scissorsButton(){
+    alert('SCISSORS!!!!!');
+}
