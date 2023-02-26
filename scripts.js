@@ -62,72 +62,66 @@ function playRound(playerSelection, computerSelection){
 }
 
 
-// Create a function named playerSelection, case sensitive rock RocK ROCK, return input
+// Create a function named playerSelection and return player choice
 function playerSelection(){
-    var userInput = '';
-    var arr = ['rock', 'paper', 'scissors'];
     
-    //Create input form user using prompt() method
-    while(!arr.includes(userInput)){ //Loop check for correct input
-        userInput = prompt('\"Rock,\" \"Paper\", \"Scissors\" :');
-        userInput = userInput.toLowerCase();
-    }
-    return userInput
+  
 }
+
 
 // Create function named game() using while/for loop up to 5 times, display the results
 //of each round and winner at the end
 
 function game(){
     
-    let computer = 0;
-    let player = 0;
-    
-    //Play 5 rounds 
-    for( i = 1; i < 6; i++){
-        playRound(playerSelection(), getComputerChoice());
-        
-        //Count game scores
-        if(score === 1)
-            player++;
-        else if (score === 0)
-            computer++;
 
-        console.log('Human player score of: ' + player);
-        console.log('Computer score of: ' + computer);
-        console.log('Round: ' + i);
+      //Create three buttons
+    //Add event listener to the button
+    const rock = document.getElementById('rock');
+    const paper = document.getElementById('paper');
+    const scissors = document.getElementById('scissors');
 
-        //Display who wins
-        if (i == 5){
-            if(player > computer)
-                console.log('Human defeat computer!!!');
-            else 
-                console.log('Computer defeated human once again!!!');
+    rock.addEventListener('click', rockButton);
+    paper.addEventListener('click', paperButton);
+    scissors.addEventListener('click', scissorsButton);
 
-        }
-
+    function rockButton(){
+        alert('rock');
     }
-}
 
-//Create three buttons
+    function paperButton(){
+        return 'paper';
+    }
 
-//Add event listener to the button
-const rock = document.getElementById('rock');
-const paper = document.getElementById('paper');
-const scissors = document.getElementById('scissors');
+    function scissorsButton(){
+        return 'scissors';
+    }
+    playRound(playerSelection(), getComputerChoice());
 
-rock.addEventListener('click', rockButton);
-rock.addEventListener('click', paperButton);
-rock.addEventListener('click', scissorsButton);
+    // let computer = 0;
+    // let player = 0;
+    
+    // //Play 5 rounds 
+    // for( i = 1; i < 6; i++){
+    //     playRound(playerSelection(), getComputerChoice());
+        
+    //     //Count game scores
+    //     if(score === 1)
+    //         player++;
+    //     else if (score === 0)
+    //         computer++;
 
-function rockButton(){
-    alert('ROCK!!!!!');
-}
+    //     console.log('Human player score of: ' + player);
+    //     console.log('Computer score of: ' + computer);
+    //     console.log('Round: ' + i);
 
-function paperButton(){
-    alert('PAPER!!!!!');
-}
+    //     //Display who wins
+    //     if (i == 5){
+    //         if(player > computer)
+    //             console.log('Human defeat computer!!!');
+    //         else 
+    //             console.log('Computer defeated human once again!!!');
 
-function scissorsButton(){
-    alert('SCISSORS!!!!!');
+    //     }
+    // }
 }
