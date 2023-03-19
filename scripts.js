@@ -61,67 +61,67 @@ function playRound(playerSelection, computerSelection){
    
 }
 
+//Create three buttons
+//Add event listener to the button
+const rock = document.getElementById('rock');
+const paper = document.getElementById('paper');
+const scissors = document.getElementById('scissors');
+
+rock.addEventListener('click', playerSelection);
+paper.addEventListener('click', playerSelection);
+scissors.addEventListener('click', playerSelection);
 
 // Create a function named playerSelection and return player choice
-function playerSelection(){
-    
-  
+function playerSelection(event){
+    //Get element ID for user input
+    console.log(this.id)
+    return this.id
 }
+
+
+
+
 
 
 // Create function named game() using while/for loop up to 5 times, display the results
 //of each round and winner at the end
-
+let i = 0;
 function game(){
     
 
-      //Create three buttons
-    //Add event listener to the button
-    const rock = document.getElementById('rock');
-    const paper = document.getElementById('paper');
-    const scissors = document.getElementById('scissors');
-
-    rock.addEventListener('click', rockButton);
-    paper.addEventListener('click', paperButton);
-    scissors.addEventListener('click', scissorsButton);
-
-    function rockButton(){
-        alert('rock');
-    }
-
-    function paperButton(){
-        return 'paper';
-    }
-
-    function scissorsButton(){
-        return 'scissors';
-    }
+    
     playRound(playerSelection(), getComputerChoice());
 
-    // let computer = 0;
-    // let player = 0;
+
+    let computer = 0;
+    let player = 0;
     
-    // //Play 5 rounds 
-    // for( i = 1; i < 6; i++){
-    //     playRound(playerSelection(), getComputerChoice());
+    //Play 5 rounds 
+    
+        playRound(playerSelection(), getComputerChoice());
         
-    //     //Count game scores
-    //     if(score === 1)
-    //         player++;
-    //     else if (score === 0)
-    //         computer++;
+        //Count game scores
+        if(score === 1)
+            player++;
+        else if (score === 0)
+            computer++;
 
-    //     console.log('Human player score of: ' + player);
-    //     console.log('Computer score of: ' + computer);
-    //     console.log('Round: ' + i);
+        console.log('Human player score of: ' + player);
+        console.log('Computer score of: ' + computer);
+        console.log('Round: ' + i);
 
-    //     //Display who wins
-    //     if (i == 5){
-    //         if(player > computer)
-    //             console.log('Human defeat computer!!!');
-    //         else 
-    //             console.log('Computer defeated human once again!!!');
+        //Display who wins
+        if (i == 5){
+            if(player > computer)
+                console.log('Human defeat computer!!!');
+            else 
+                console.log('Computer defeated human once again!!!');
 
-    //     }
-    // }
+        }
+    
 }
+
+game()
+
+
+   
